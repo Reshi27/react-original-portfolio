@@ -1,11 +1,13 @@
 import React, { Fragment } from "react";
-import { Background } from "./LoginStyle";
-
+import { Background, LoginContainer } from "./LoginStyle";
+import { Card } from "../Card/Card";
 export const LoginForm = () => {
   return (
     <Fragment>
       <Background>
-        <h1>This is Login</h1>
+        <Card>
+          <h1>This is it</h1>
+        </Card>
       </Background>
     </Fragment>
   );
