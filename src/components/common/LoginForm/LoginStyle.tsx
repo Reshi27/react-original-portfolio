@@ -8,8 +8,28 @@ export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
 
-export const LoginContainer = styled.div`
-  background-color: green;
+export const ReactImage = styled.img`
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 2rem;
+  position: fixed;
+  top: 4rem;
+
+  animation: logo-spin infinite 20s linear;
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;
+
+export const LoginTitle = styled.div``;
+
+export const FormContainer = styled.div``;

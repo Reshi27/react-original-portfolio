@@ -3,7 +3,7 @@ import * as S from "./CardStyle";
 export const Card = (props: any) => {
   return (
     <Fragment>
-      <S.Card className={`${props.className}`}>{props.children}</S.Card>
+      <S.Card bg={props.warna}>{props.children}</S.Card>
     </Fragment>
   );
 };
