@@ -30,6 +30,33 @@ export const ReactImage = styled.img`
   }
 `;
 
-export const LoginTitle = styled.div``;
+export const LoginTitle = styled.h1`
+  display: block;
+  text-align: center;
+  border: 1px solid red;
+`;
 
-export const FormContainer = styled.div``;
+export const Form = styled.form`
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+`;
+
+export const FormGroup = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin: 1rem 0;
+
+  & label {
+    border: 1px solid red;
+    margin-right: 2rem;
+  }
+
+  & input {
+    border-radius: 10px;
+    height: 1.5rem;
+    background-color: transparent;
+  }
+`;
