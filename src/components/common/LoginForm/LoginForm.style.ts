@@ -34,6 +34,7 @@ export const LoginTitle = styled.h1`
   display: block;
   text-align: center;
   border: 1px solid red;
+  font-size: 24px;
 `;
 
 export const Form = styled.form`

@@ -5,7 +5,7 @@ import {
   ReactImage,
   Form,
   FormGroup,
-} from "./LoginStyle";
+} from "./LoginForm.style";
 import { Card } from "../Card/Card";
 import reactLogo from "../../../assets/react.svg";
 export const LoginForm = () => {
@@ -13,8 +13,8 @@ export const LoginForm = () => {
     <Fragment>
       <Background>
         <ReactImage src={reactLogo}></ReactImage>
-        <Card color={"cyan"}>
-          <LoginTitle>Login</LoginTitle>
+        <Card color={"cyan"} width={35} height={15}>
+          <LoginTitle>Log In</LoginTitle>
           <Form>
             <FormGroup>
               <label htmlFor="login">Email</label>
