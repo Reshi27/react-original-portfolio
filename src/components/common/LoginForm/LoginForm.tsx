@@ -5,27 +5,33 @@ import {
   ReactImage,
   Form,
   FormGroup,
+  LoginContainer,
 } from "./LoginForm.style";
 import { Card } from "../Card/Card";
 import reactLogo from "../../../assets/react.svg";
+import { Button } from "../Button/Button";
 export const LoginForm = () => {
   return (
     <Fragment>
       <Background>
         <ReactImage src={reactLogo}></ReactImage>
-        <Card color={"cyan"} width={35} height={15}>
-          <LoginTitle>Log In</LoginTitle>
-          <Form>
-            <FormGroup>
-              <label htmlFor="login">Email</label>
-              <input type="text" name="email" />
-            </FormGroup>
+        <Card color={"transparent"}>
+          <LoginContainer>
+            <LoginTitle>Log In</LoginTitle>
+            <Form>
+              <FormGroup>
+                <label htmlFor="login">Email</label>
+                <input type="text" name="email" />
+              </FormGroup>
 
-            <FormGroup>
-              <label htmlFor="passord">Password</label>
-              <input type="password" name="password" />
-            </FormGroup>
-          </Form>
+              <FormGroup>
+                <label htmlFor="passord">Password</label>
+                <input type="password" name="password" />
+              </FormGroup>
+
+              <Button>Login</Button>
+            </Form>
+          </LoginContainer>
         </Card>
       </Background>
     </Fragment>

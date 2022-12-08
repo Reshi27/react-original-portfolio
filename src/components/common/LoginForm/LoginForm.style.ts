@@ -30,17 +30,21 @@ export const ReactImage = styled.img`
   }
 `;
 
+export const LoginContainer = styled.div`
+  color: white;
+`;
+
 export const LoginTitle = styled.h1`
   display: block;
   text-align: center;
-  border: 1px solid red;
+
   font-size: 24px;
 `;
 
 export const Form = styled.form`
   display: flex;
-  align-items: start;
-  justify-content: start;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 `;
 
@@ -48,16 +52,15 @@ export const FormGroup = styled.div`
   display: flex;
   align-items: start;
   justify-content: start;
-  margin: 1rem 0;
+  flex-direction: column;
+  margin: 0.8rem 0;
 
   & label {
-    border: 1px solid red;
-    margin-right: 2rem;
+    margin-bottom: 1rem;
   }
 
   & input {
-    border-radius: 10px;
+    border-radius: 5px;
     height: 1.5rem;
-    background-color: transparent;
   }
 `;

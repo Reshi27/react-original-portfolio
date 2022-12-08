@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { IStyle } from "../../../interfaces/Interface";
 interface Props {
   bg: string;
   width: number;
