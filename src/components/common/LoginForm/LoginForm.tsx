@@ -15,7 +15,7 @@ export const LoginForm = () => {
     <Fragment>
       <Background>
         <ReactImage src={reactLogo}></ReactImage>
-        <Card color={"transparent"}>
+        <Card>
           <LoginContainer>
             <LoginTitle>Log In</LoginTitle>
             <Form>

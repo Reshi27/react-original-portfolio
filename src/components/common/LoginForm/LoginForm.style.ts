@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../Button/Button.style";
 
 export const Background = styled.div`
   background-color: #0f0f0f;
@@ -16,7 +17,7 @@ export const ReactImage = styled.img`
   height: 10rem;
   margin-bottom: 2rem;
   position: fixed;
-  top: 4rem;
+  top: 0.1rem;
 
   animation: logo-spin infinite 20s linear;
 
@@ -32,29 +33,26 @@ export const ReactImage = styled.img`
 
 export const LoginContainer = styled.div`
   color: white;
+  width: 425px;
 `;
 
 export const LoginTitle = styled.h1`
   display: block;
   text-align: center;
-
-  font-size: 24px;
+  color: #042f66;
+  font-size: 32px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
 `;
 
 export const Form = styled.form`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 `;
 
 export const FormGroup = styled.div`
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  flex-direction: column;
-  margin: 0.8rem 0;
-
+  margin: 1rem;
+  display: block;
   & label {
     margin-bottom: 1rem;
   }
@@ -62,5 +60,7 @@ export const FormGroup = styled.div`
   & input {
     border-radius: 5px;
     height: 1.5rem;
+    width: 100%;
+    margin-top: 1rem;
   }
 `;
