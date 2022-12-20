@@ -59,8 +59,33 @@ export const FormGroup = styled.div`
 
   & input {
     border-radius: 5px;
-    height: 1.5rem;
+    height: 2.2rem;
     width: 100%;
     margin-top: 1rem;
+    border-style: none;
+    outline: none;
+    outline: 0;
+    font-size: 18px;
+    transition: all 0.5s ease;
   }
+`;
+
+export const LoginButton = styled(Button)`
+  text-align: center;
+  margin: 0.5rem auto;
+
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
 `;

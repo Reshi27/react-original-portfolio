@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const Button = styled.button<Props>`
-  background-color: #1979a9;
+  background-color: ${(props) => props.bg};
   color: black;
   padding: 0.6rem 1.3rem;
   font-size: 16px;
@@ -17,5 +17,18 @@ export const Button = styled.button<Props>`
   margin: 1rem;
   text-align: center;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all 0.2s ease;
+  &:hover,
+  &:focus {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translate(0);
+  }
 `;

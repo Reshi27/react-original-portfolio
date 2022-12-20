@@ -6,6 +6,7 @@ import {
   Form,
   FormGroup,
   LoginContainer,
+  LoginButton,
 } from "./LoginForm.style";
 import { Card } from "../Card/Card";
 import reactLogo from "../../../assets/react.svg";
@@ -29,7 +30,7 @@ export const LoginForm = () => {
                 <input type="password" name="password" />
               </FormGroup>
 
-              <Button>Login</Button>
+              <LoginButton bg={" #0F0F0F"}>Login</LoginButton>
             </Form>
           </LoginContainer>
         </Card>
