@@ -73,7 +73,6 @@ export const FormGroup = styled.div`
 export const LoginButton = styled(Button)`
   text-align: center;
   margin: 0.5rem auto;
-
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;

@@ -1,7 +1,9 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import { Header } from "../components/common/Header/Header";
 export const PortfolioPage = () => {
   return (
-    <div>Big Welcome To Portfolio Page, Glad to Have You Here Finally</div>
+    <Fragment>
+      <Header></Header>
+    </Fragment>
   );
 };

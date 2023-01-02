@@ -15,7 +15,7 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    authentication: (state, action: PayloadAction<string>) => {
+    authentication: (state, action) => {
       if (state.name === action.payload && state.password === action.payload) {
         alert("Login Successfull");
       } else {
