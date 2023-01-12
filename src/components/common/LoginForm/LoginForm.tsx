@@ -1,6 +1,5 @@
-import React, { Fragment, useState, ChangeEvent } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { authentication, authSlice } from "../../../store/slice/authSlice";
+import React, { Fragment, useState, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Background,
   LoginTitle,
@@ -12,27 +11,41 @@ import {
 } from "./LoginForm.style";
 import { Card } from "../Card/Card";
 import reactLogo from "../../../assets/react.svg";
-import { RootState } from "../../../store/store";
 
 export const LoginForm = () => {
-  const authName = useSelector((state: RootState) => state.auth.name);
-  const authPassword = useSelector((state: RootState) => state.auth.password);
-  const dispatch = useDispatch();
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
+  const navigate = useNavigate();
 
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleName = (event: ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+  const emailHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
   };
 
-  const handlePassword = (event: ChangeEvent<HTMLInputElement>) => {
+  const passwordHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
 
-  const authLogin = (event: any) => {
+  const loginHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(authentication(name));
+
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBPuyFUJTmPEdag71Rr0jmZECrKDVxgj-o",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }),
+      }
+    ).then((res) => {
+      if (res.ok) {
+        navigate("/portfolio");
+      }
+    });
   };
 
   return (
@@ -42,14 +55,15 @@ export const LoginForm = () => {
         <Card>
           <LoginContainer>
             <LoginTitle>Log In</LoginTitle>
-            <Form onSubmit={authLogin}>
+            <Form onSubmit={loginHandler}>
               <FormGroup>
                 <label htmlFor="login">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
-                  onChange={handleName}
-                  value={name}
+                  style={{ background: "white", color: "black" }}
+                  onChange={emailHandler}
+                  required
                 />
               </FormGroup>
 
@@ -58,8 +72,9 @@ export const LoginForm = () => {
                 <input
                   type="password"
                   name="password"
-                  onChange={handlePassword}
-                  value={password}
+                  style={{ background: "white", color: "black" }}
+                  required
+                  onChange={passwordHandler}
                 />
               </FormGroup>
 

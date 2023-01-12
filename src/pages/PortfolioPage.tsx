@@ -1,9 +1,43 @@
+import { ColorScheme, MantineProvider, Paper } from "@mantine/core";
+import { useLocalStorage } from "@mantine/hooks";
 import React, { Fragment } from "react";
-import { Header } from "../components/common/Header/Header";
-export const PortfolioPage = () => {
+import Header from "../components/layout/Header/Header";
+import HeroSection from "../components/layout/Hero/HeroSection";
+const PortfolioPage: React.FC = () => {
+  const [colorScheme] = useLocalStorage<ColorScheme>({
+    key: "mantine-color-scheme",
+    defaultValue: "light",
+    getInitialValueInEffect: true,
+  });
+
   return (
     <Fragment>
-      <Header></Header>
+      <MantineProvider
+        theme={{
+          colorScheme,
+          colors: {
+            dark: [
+              "#F8F9FA",
+              "#F1F3F5",
+              "#E9ECEF",
+              "#DEE2E6",
+              "#CED4DA",
+              "#ADB5BD",
+              "#868E96",
+              "#495057",
+              "#343A40",
+              "#212529",
+            ],
+          },
+        }}
+      >
+        <Paper shadow="md">
+          <Header></Header>
+        </Paper>
+      </MantineProvider>
+      <HeroSection></HeroSection>
     </Fragment>
   );
 };
+
+export default PortfolioPage;

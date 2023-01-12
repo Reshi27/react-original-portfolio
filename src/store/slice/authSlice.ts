@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PayloadAction } from "@reduxjs/toolkit";
-import { Navigate, useNavigate } from "react-router-dom";
+
 export interface Auth {
   name: string;
   password: string;
