@@ -4,13 +4,19 @@ import { BlogContainer } from "./BlogSection.style";
 const BlogSection = () => {
   return (
     <Fragment>
-      <Paper>
-        <BlogContainer>
+      <BlogContainer>
+        <Paper p="xl">
           <Title align="center">This is a Blog Section</Title>
 
-          <Grid mt={36} gutter="xl">
-            <Grid.Col md={12} lg={4} mt={10}>
-              <Card shadow="md" p="xl">
+          <Grid mt={10} gutter="xl" justify="center" align="center">
+            <Grid.Col md={6} lg={3} mt={10}>
+              <Card
+                shadow="md"
+                p="xl"
+                component="a"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+              >
                 <Card.Section>
                   <Image
                     src="https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
@@ -70,8 +76,8 @@ const BlogSection = () => {
               </Card>
             </Grid.Col>
           </Grid>
-        </BlogContainer>
-      </Paper>
+        </Paper>
+      </BlogContainer>
     </Fragment>
   );
 };
