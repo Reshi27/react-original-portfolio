@@ -4,10 +4,12 @@ import React, { Fragment } from "react";
 
 const HeroSection: React.FC = () => {
   const isMobile = useMediaQuery("(min-width: 579px)");
+  const isTablet = useMediaQuery("(min-width: 768px)");
+  const isLaptopOrDesktop = useMediaQuery("(min-width: 992px)");
   return (
     <Fragment>
-      <Container mt={100}>
-        <Title size={isMobile ? 120 : 60} sx={{ fontFamily: "Roboto" }}>
+      <Container mt={100} mb={40}>
+        <Title size={!isMobile ? 120 : 60} sx={{ fontFamily: "Roboto" }}>
           Mahareshi
         </Title>
         <Title
@@ -19,7 +21,7 @@ const HeroSection: React.FC = () => {
         </Title>
 
         <Text
-          size={isMobile ? 36 : 16}
+          size={isMobile ? 36 : 12}
           sx={{ fontFamily: "Raleway", letterSpacing: 10 }}
           c="cyan"
           mt={20}
