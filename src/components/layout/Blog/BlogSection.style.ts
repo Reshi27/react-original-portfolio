@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { Container, Text } from "@mantine/core";
 import { Title } from "@mantine/core";
+
 export const BlogContainer = styled.div`
   padding: 3rem;
+  background: ${(props) => props.color};
 `;
 
 export const HeroTitle = styled(Title)`

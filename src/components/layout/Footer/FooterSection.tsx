@@ -1,12 +1,36 @@
-import { Grid, Text } from "@mantine/core";
 import React, { Fragment } from "react";
-import signature from "../../../assets/signature.png";
-import { Signature } from "./FooterSection.style";
-import { useMediaQuery } from "react-responsive";
+import lightSignature from "../../../assets/light-signature.png";
+import darkSignature from "../../../assets/dark-signature.png";
+import {
+  FooterContainer,
+  Signature,
+  IconWrapper,
+  FooterIcons,
+} from "./FooterSection.style";
+import { BsDiscord, BsGithub, BsInstagram } from "react-icons/bs";
+
+import { useMantineColorScheme } from "@mantine/core";
+
 const FooterSection: React.FC = () => {
+  const { colorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
+
   return (
     <Fragment>
-      <Signature src={signature}></Signature>
+      <FooterContainer>
+        <Signature src={dark ? lightSignature : darkSignature}></Signature>
+        <IconWrapper>
+          <FooterIcons>
+            <BsGithub></BsGithub>
+          </FooterIcons>
+          <FooterIcons>
+            <BsInstagram></BsInstagram>
+          </FooterIcons>
+          <FooterIcons>
+            <BsDiscord></BsDiscord>
+          </FooterIcons>
+        </IconWrapper>
+      </FooterContainer>
     </Fragment>
   );
 };
