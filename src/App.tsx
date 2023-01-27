@@ -5,8 +5,10 @@ import {
   MantineProvider,
   ColorSchemeProvider,
   ColorScheme,
+  Paper,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
+import Header from "./components/layout/Header/Header";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -45,6 +47,7 @@ function App() {
           withGlobalStyles
           withNormalizeCSS
         >
+          <Header></Header>
           <AppRouter></AppRouter>
         </MantineProvider>
       </ColorSchemeProvider>
