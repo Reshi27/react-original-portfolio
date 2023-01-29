@@ -1,7 +1,7 @@
 import { Container, Text, Title } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import React, { Fragment } from "react";
-import { HeroSpanTitle, HeroText, HeroTitle } from "../Blog/BlogSection.style";
+import { HeroSpanTitle, HeroText, HeroTitle } from "./Section.style";
 
 const HeroSection: React.FC = () => {
   const isMobile = useMediaQuery("(min-width: 579px)");

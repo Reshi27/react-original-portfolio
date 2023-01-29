@@ -1,10 +1,10 @@
 import { ColorScheme, MantineProvider } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import React, { Fragment } from "react";
-import BlogSection from "../components/layout/Blog/BlogSection";
-import FooterSection from "../components/layout/Footer/FooterSection";
-import Header from "../components/layout/Header/Header";
-import HeroSection from "../components/layout/Hero/HeroSection";
+import BlogSection from "../components/layout/Home/BlogSection";
+import FooterSection from "../components/layout/Home/FooterSection";
+import Header from "../components/common/Header/Header";
+import HeroSection from "../components/layout/Home/HeroSection";
 const PortfolioPage: React.FC = () => {
   const [colorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
@@ -14,8 +14,8 @@ const PortfolioPage: React.FC = () => {
 
   return (
     <Fragment>
+      <Header></Header>
       <HeroSection></HeroSection>
-
       <MantineProvider
         theme={{
           colorScheme,

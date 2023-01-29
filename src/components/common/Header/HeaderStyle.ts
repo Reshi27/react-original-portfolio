@@ -5,7 +5,6 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props) => props.bg};
 `;
 
 export const BrandLogo = styled.div``;
@@ -14,4 +13,7 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  & a {
+    text-decoration: none;
+  }
 `;
