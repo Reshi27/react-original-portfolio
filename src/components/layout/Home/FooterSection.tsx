@@ -6,7 +6,7 @@ import {
   Signature,
   IconWrapper,
   FooterIcons,
-} from "./FooterSection.style";
+} from "./Section.style";
 import { BsDiscord, BsGithub, BsInstagram } from "react-icons/bs";
 
 import { useMantineColorScheme } from "@mantine/core";

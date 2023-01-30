@@ -2,13 +2,12 @@ import {
   Card,
   Grid,
   Image,
-  Paper,
   Text,
   Title,
   useMantineColorScheme,
 } from "@mantine/core";
 import React, { Fragment } from "react";
-import { BlogContainer } from "./BlogSection.style";
+import { BlogContainer } from "./Section.style";
 
 const BlogSection: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
