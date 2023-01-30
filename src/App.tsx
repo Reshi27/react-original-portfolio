@@ -5,7 +5,6 @@ import {
   MantineProvider,
   ColorSchemeProvider,
   ColorScheme,
-  Paper,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
 import Header from "./components/layout/Header/Header";

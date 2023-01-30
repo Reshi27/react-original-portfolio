@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props) => props.bg};
+  background-color: ${(props) => props.color};
 `;
 
 export const BrandLogo = styled.div``;
