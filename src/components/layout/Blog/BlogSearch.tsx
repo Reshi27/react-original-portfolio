@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 const BlogSearch: React.FC = () => {
   return (
     <Fragment>
-      <Container size="xs" py={50}>
+      <Container size="xs" my={50}>
         <Input
           placeholder="Search Here"
           styles={(theme) => ({

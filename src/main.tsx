@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import main from "./main.css";
+
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 

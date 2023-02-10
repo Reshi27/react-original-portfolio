@@ -7,7 +7,7 @@ import {
   ColorScheme,
 } from "@mantine/core";
 import { useLocalStorage } from "@mantine/hooks";
-import Header from "./components/common/Header/Header";
+import { GlobalStyle } from "./style/GlobalStyle";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -20,6 +20,7 @@ function App() {
 
   return (
     <Fragment>
+      <GlobalStyle></GlobalStyle>
       <ColorSchemeProvider
         colorScheme={colorScheme}
         toggleColorScheme={toggleColorScheme}

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogPage from "../../pages/BlogPage";
 import LoginPage from "../../pages/LoginPage";
 import PortfolioPage from "../../pages/PortfolioPage";
-import ReactBlog from "../layout/BlogPosts/ReactBlog";
+import BlogDetailsPage from "../../pages/BlogDetailsPage";
 export function AppRouter() {
   return (
     <BrowserRouter>
@@ -12,10 +12,12 @@ export function AppRouter() {
         <Route
           path="portfolio"
           element={<PortfolioPage></PortfolioPage>}
-        ></Route> 
-          <Route path="blog" element={<BlogPage></BlogPage>}>
-          <Route path="/1" element={<ReactBlog></ReactBlog>}></Route>
-          </Route> 
+        ></Route>
+        <Route path="blog" element={<BlogPage></BlogPage>}></Route>
+        <Route
+          path="/blog/:id"
+          element={<BlogDetailsPage></BlogDetailsPage>}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -16,24 +16,27 @@ export const HeroTitle = styled(MantineTitle)`
 
   @media (max-width: 1200px) {
     font-size: 80px;
+    margin-left: 2.5rem;
   }
 
   @media (max-width: 768px) {
     font-size: 60px;
+    margin-left: 2.5rem;
   }
 `;
 
 export const HeroSpanTitle = styled(MantineTitle)`
   font-size: 120px;
   font-family: "Roboto", sans-serif;
-  margin-left: 120px;
+  margin-left: 7.2rem;
   @media (max-width: 1200px) {
     font-size: 80px;
+    margin-left: 7.2rem;
   }
 
   @media (max-width: 768px) {
     font-size: 60px;
-    margin-left: 60px;
+    margin-left: 6rem;
   }
 `;
 
@@ -43,23 +46,43 @@ export const HeroText = styled(MantineText)`
   font-family: "Raleway", sans-serif;
   margin-top: 20px;
   color: cyan;
+  margin-bottom: 2rem;
+  margin-left: 0.8rem;
 
   @media (max-width: 1200px) {
     font-size: 24px;
+    margin-left: 2.8rem;
   }
 
   @media (max-width: 768px) {
     font-size: 16px;
+    margin-left: 2.5rem;
+  }
+
+  @media (max-width: 455px) {
+    font-size: 10px;
+    margin-left: 2.5rem;
   }
 `;
 
-export const Signature = styled.img``;
+export const Signature = styled.img`
+  margin-left: -3.2rem;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 20rem;
+  }
+
+  @media (max-width: 576px) {
+    margin-left: 0;
+    width: 12rem;
+  }
+`;
 
 export const FooterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 9rem;
+  padding-right: 2rem;
 `;
 
 export const FooterIcons = styled.a`
@@ -68,7 +91,18 @@ export const FooterIcons = styled.a`
   transition: 0.5s ease;
   cursor: pointer;
   &:hover {
+    transition: 0.5s ease;
+    transform: translateY(-0.3rem);
     color: cyan;
+  }
+
+  &:not(:hover) {
+    transition: 0.5s ease;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 576px) {
+    font-size: 16px;
   }
 `;
 
