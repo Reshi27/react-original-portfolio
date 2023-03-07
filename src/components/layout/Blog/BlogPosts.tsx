@@ -15,24 +15,26 @@ const BlogPosts: React.FC = () => {
   const navigate = useNavigate();
   const blogData = data.map((data: any) => {
     return (
-      <Grid.Col lg={3} md={4} sm={6}>
-        <BlogCard<"a">
-          key={data.id}
-          theme={dark ? "#474747" : "#d6d6d6"}
-          onClick={() => navigate(`/blog/${data.id}`)}
-        >
-          <BlogCard.Section>
-            <Image src={data.image}></Image>
-          </BlogCard.Section>
+      <Fragment key={data.id}>
+        <Grid.Col lg={3} md={4} sm={6}>
+          <BlogCard<"a">
+            key={data.id}
+            theme={dark ? "#474747" : "#d6d6d6"}
+            onClick={() => navigate(`/blog/${data.id}`)}
+          >
+            <BlogCard.Section>
+              <Image src={data.image}></Image>
+            </BlogCard.Section>
 
-          <Text weight={500} mt="sm">
-            {data.title}
-          </Text>
-          <Text size="sm" lineClamp={6} mt="sm">
-            {data.description}
-          </Text>
-        </BlogCard>
-      </Grid.Col>
+            <Text weight={500} mt="sm">
+              {data.title}
+            </Text>
+            <Text size="sm" lineClamp={6} mt="sm">
+              {data.description}
+            </Text>
+          </BlogCard>
+        </Grid.Col>
+      </Fragment>
     );
   });
 

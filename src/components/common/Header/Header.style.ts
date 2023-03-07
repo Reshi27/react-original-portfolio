@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as MantineLink } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
   padding: 1rem 2rem;
@@ -16,6 +17,11 @@ export const Navigation = styled.nav`
   align-items: center;
   & a {
     text-decoration: none;
+    margin-right: 2rem;
+    color: #fff;
+    :nth-child(4) {
+      margin-right: 0.5rem;
+    }
   }
 
   @media (max-width: 576px) {

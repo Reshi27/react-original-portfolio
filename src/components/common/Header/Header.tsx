@@ -58,14 +58,11 @@ const Header: React.FC = () => {
       <HeaderContainer color={dark ? "#000" : "#ADB5BD"}>
         <BrandLogo>Reshi27</BrandLogo>
         <Navigation>
-          <Link to="/portfolio">
-            <NavLink component="a" label="Home"></NavLink>
-          </Link>
-          <NavLink component="a" label="Portfolio"></NavLink>
-          <Link to="/blog">
-            <NavLink component="a" label="Blog"></NavLink>
-          </Link>
-          <NavLink component="a" label="About"></NavLink>
+          <Link to="/portfolio">Home</Link>
+          <Link to="#">Portfolio</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="#">About</Link>
+
           <Space w="sm"></Space>
           <Divider orientation="vertical"></Divider>
           <Space w="md"></Space>
