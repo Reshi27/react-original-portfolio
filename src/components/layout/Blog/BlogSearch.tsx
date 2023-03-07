@@ -1,11 +1,15 @@
 import { Container, Input } from "@mantine/core";
 import React, { ChangeEvent, Fragment, useState } from "react";
 
-const BlogSearch: React.FC = () => {
+interface Props {
+  messageChangeHandler: (message: string) => void;
+}
+
+const BlogSearch: React.FC<Props> = ({ messageChangeHandler }) => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   const searchValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value);
+    messageChangeHandler(event.target.value);
   };
   return (
     <Fragment>
@@ -19,6 +23,7 @@ const BlogSearch: React.FC = () => {
               },
             },
           })}
+          onChange={searchValueChangeHandler}
         ></Input>
       </Container>
     </Fragment>

@@ -3,17 +3,16 @@ import Header from "../components/common/Header/Header";
 import BlogPosts from "../components/layout/Blog/BlogPosts";
 import BlogSearch from "../components/layout/Blog/BlogSearch";
 const BlogPage: React.FC = () => {
-  const [message, setMessage] = useState<string>("");
+  const [searchResult, setSearchResult] = useState<string>("");
 
   const messageChangeHandler = (message: string) => {
-    setMessage(message);
+    setSearchResult(message);
   };
   return (
     <Fragment>
-      <h1>{message}</h1>
       <Header></Header>
-      <BlogSearch></BlogSearch>
-      <BlogPosts></BlogPosts>
+      <BlogSearch messageChangeHandler={messageChangeHandler}></BlogSearch>
+      <BlogPosts searchResult={searchResult}></BlogPosts>
     </Fragment>
   );
 };
