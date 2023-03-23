@@ -31,6 +31,7 @@
     "@types/styled-components": "^5.1.26",
     "dayjs": "^1.11.7",
     "embla-carousel-react": "^7.0.5",
+    "framer-motion": "^10.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
@@ -46,5 +47,9 @@
     "@vitejs/plugin-react": "^2.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Reshi27/react-original-portfolio",
+  "author": "Mahareshi Wahyuaji <m.reshi1998@gmail.com>",
+  "license": "MIT"
 }

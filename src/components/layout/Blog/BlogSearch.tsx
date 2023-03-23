@@ -6,8 +6,6 @@ interface Props {
 }
 
 const BlogSearch: React.FC<Props> = ({ messageChangeHandler }) => {
-  const [searchValue, setSearchValue] = useState<string>("");
-
   const searchValueChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     messageChangeHandler(event.target.value);
   };

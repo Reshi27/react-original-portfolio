@@ -2,8 +2,9 @@ import styled from "styled-components";
 import {
   Title as MantineTitle,
   Text as MantineText,
-  Container as MantineContainer,
+  Card as MantineCard,
 } from "@mantine/core";
+import { moveInLeft, moveInRight, moveInUp } from "./Section.animation";
 
 export const BlogContainer = styled.div`
   padding: 3rem;
@@ -13,6 +14,7 @@ export const BlogContainer = styled.div`
 export const HeroTitle = styled(MantineTitle)`
   font-size: 120px;
   font-family: "Roboto", sans-serif;
+  animation: ${moveInLeft} 1s ease;
 
   @media (max-width: 1200px) {
     font-size: 80px;
@@ -29,6 +31,7 @@ export const HeroSpanTitle = styled(MantineTitle)`
   font-size: 120px;
   font-family: "Roboto", sans-serif;
   margin-left: 7.2rem;
+  animation: ${moveInLeft} 1s ease;
   @media (max-width: 1200px) {
     font-size: 80px;
     margin-left: 7.2rem;
@@ -48,6 +51,7 @@ export const HeroText = styled(MantineText)`
   color: cyan;
   margin-bottom: 2rem;
   margin-left: 0.8rem;
+  animation: ${moveInRight} 1s ease;
 
   @media (max-width: 1200px) {
     font-size: 24px;
@@ -63,6 +67,10 @@ export const HeroText = styled(MantineText)`
     font-size: 10px;
     margin-left: 2.5rem;
   }
+`;
+
+export const Card = styled(MantineCard as any)`
+  animation: ${moveInUp} 1s ease-in;
 `;
 
 export const Signature = styled.img`

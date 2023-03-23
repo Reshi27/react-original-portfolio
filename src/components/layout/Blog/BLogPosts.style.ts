@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { Card } from "@mantine/core";
+import { Card as MantineCard } from "@mantine/core";
 
 const upward = keyframes`
 from {
@@ -11,9 +11,10 @@ to{
 }
 `;
 
-export const BlogCard = styled(Card)`
+export const Card = styled(MantineCard as any)`
   background-color: ${(props) => props.theme};
   cursor: pointer;
+  min-height: 23rem;
 
   &:hover {
     transition: 0.5s ease;

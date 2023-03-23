@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as MantineLink } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
   padding: 1rem 2rem;
@@ -15,13 +14,45 @@ export const Navigation = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+
   & a {
     text-decoration: none;
     margin-right: 2rem;
-    color: #fff;
-    :nth-child(4) {
-      margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    :nth-child(1)::after {
+      width: 2.7rem;
     }
+
+    :nth-child(2)::after {
+      width: 3.8rem;
+    }
+
+    :nth-child(3)::after {
+      width: 2.1rem;
+    }
+
+    :nth-child(4)::after {
+      margin-right: 0.5rem;
+      width: 2.8rem;
+    }
+  }
+
+  & a::after {
+    content: "";
+    position: absolute;
+    top: 2.8rem;
+    transform: scaleX(0);
+    height: 2px;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  & a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   @media (max-width: 576px) {

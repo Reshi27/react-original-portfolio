@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import Header from "../components/common/Header/Header";
 import BlogPosts from "../components/layout/Blog/BlogPosts";
 import BlogSearch from "../components/layout/Blog/BlogSearch";
+import MoveInRightAnimation from "../style/animations/MoveInRightAnimation";
 const BlogPage: React.FC = () => {
   const [searchResult, setSearchResult] = useState<string>("");
 
@@ -11,8 +12,10 @@ const BlogPage: React.FC = () => {
   return (
     <Fragment>
       <Header></Header>
-      <BlogSearch messageChangeHandler={messageChangeHandler}></BlogSearch>
-      <BlogPosts searchResult={searchResult}></BlogPosts>
+      <MoveInRightAnimation>
+        <BlogSearch messageChangeHandler={messageChangeHandler}></BlogSearch>
+        <BlogPosts searchResult={searchResult}></BlogPosts>
+      </MoveInRightAnimation>
     </Fragment>
   );
 };
