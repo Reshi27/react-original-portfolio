@@ -6,9 +6,17 @@ import {
 } from "@mantine/core";
 import { moveInLeft, moveInRight, moveInUp } from "./Section.animation";
 
+export const SectionContainer = styled.div`
+  position: relative;
+  background: ${(props) => props.color};
+`;
+
 export const BlogContainer = styled.div`
   padding: 3rem;
-  background: ${(props) => props.color};
+`;
+
+export const ServiceContainer = styled.div`
+  padding: 3rem;
 `;
 
 export const HeroTitle = styled(MantineTitle)`

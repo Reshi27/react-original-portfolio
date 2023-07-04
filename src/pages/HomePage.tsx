@@ -5,6 +5,7 @@ import BlogSection from "../components/layout/Home/BlogSection";
 import FooterSection from "../components/layout/Home/FooterSection";
 import Header from "../components/common/Header/Header";
 import HeroSection from "../components/layout/Home/HeroSection";
+import ServiceSection from "../components/layout/Home/ServiceSection";
 
 const PortfolioPage: React.FC = () => {
   const [colorScheme] = useLocalStorage<ColorScheme>({
@@ -17,6 +18,7 @@ const PortfolioPage: React.FC = () => {
     <Fragment>
       <Header></Header>
       <HeroSection></HeroSection>
+      <ServiceSection></ServiceSection>
       <MantineProvider
         theme={{
           colorScheme,

@@ -4,6 +4,8 @@ import BlogPage from "../../pages/BlogPage";
 import LoginPage from "../../pages/LoginPage";
 import HomePage from "../../pages/HomePage";
 import BlogDetailsPage from "../../pages/BlogDetailsPage";
+import TestPage from "../../pages/TestPage";
+
 export function AppRouter() {
   return (
     <BrowserRouter>
@@ -15,6 +17,7 @@ export function AppRouter() {
           path="/blog/:id"
           element={<BlogDetailsPage></BlogDetailsPage>}
         ></Route>
+        <Route path="test" element={<TestPage></TestPage>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,22 +1,22 @@
-import { Grid, Image, Text, Title, useMantineColorScheme } from "@mantine/core";
 import React, { Fragment } from "react";
-import { BlogContainer, Card, SectionContainer } from "./Section.style";
+import { SectionContainer, ServiceContainer } from "./Section.style";
+import { Card, Grid, Image, Text, useMantineColorScheme } from "@mantine/core";
+import { theme } from "../../../style/theme/theme";
 import WhiteSectionTag from "../../common/Tag/WhiteSectionTag";
 
-const BlogSection: React.FC = () => {
+const ServiceSection: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
 
   return (
     <Fragment>
-      <SectionContainer color={dark ? "#000" : "#ADB5BD"}>
+      <SectionContainer>
         <WhiteSectionTag
-          title="BLOG"
-          color={dark ? "#000" : "#ADB5BD"}
+          title="SERVICES"
+          color={dark ? "#000" : theme.colors.grey}
         ></WhiteSectionTag>
-        <BlogContainer>
-          {/* <Title align="center">This is a Blog Section</Title> */}
 
+        <ServiceContainer>
           <Grid mt={10} gutter="xl" justify="center" align="center">
             <Grid.Col md={6} lg={4} mt={10}>
               <Card
@@ -97,10 +97,10 @@ const BlogSection: React.FC = () => {
               </Card>
             </Grid.Col>
           </Grid>
-        </BlogContainer>
+        </ServiceContainer>
       </SectionContainer>
     </Fragment>
   );
 };
 
-export default BlogSection;
+export default ServiceSection;
