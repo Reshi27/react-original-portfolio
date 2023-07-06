@@ -6,7 +6,7 @@ interface props {
   color: string;
 }
 
-const WhiteSectionTag: React.FC<props> = ({ title, color }) => {
+const SectionTag: React.FC<props> = ({ title, color }) => {
   return (
     <Fragment>
       <TagContainer color={color}>
@@ -16,4 +16,4 @@ const WhiteSectionTag: React.FC<props> = ({ title, color }) => {
   );
 };
 
-export default WhiteSectionTag;
+export default SectionTag;

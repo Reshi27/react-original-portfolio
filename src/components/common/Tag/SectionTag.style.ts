@@ -13,4 +13,5 @@ export const TagTitle = styled.h2`
   text-align: center;
   margin-top: 3.8rem;
   margin-left: 1.5rem;
+  font-size: 24px;
 `;

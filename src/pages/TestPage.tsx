@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import SectionTag from "../components/common/Tag/WhiteSectionTag";
+import SectionTag from "../components/common/Tag/SectionTag";
 
 const TestPage: React.FC = () => {
   return <Fragment></Fragment>;

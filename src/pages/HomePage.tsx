@@ -6,6 +6,8 @@ import FooterSection from "../components/layout/Home/FooterSection";
 import Header from "../components/common/Header/Header";
 import HeroSection from "../components/layout/Home/HeroSection";
 import ServiceSection from "../components/layout/Home/ServiceSection";
+import AboutSection from "../components/layout/Home/AboutSection";
+import TestimonialSection from "../components/layout/Home/TestimonialSection";
 
 const PortfolioPage: React.FC = () => {
   const [colorScheme] = useLocalStorage<ColorScheme>({
@@ -19,27 +21,9 @@ const PortfolioPage: React.FC = () => {
       <Header></Header>
       <HeroSection></HeroSection>
       <ServiceSection></ServiceSection>
-      <MantineProvider
-        theme={{
-          colorScheme,
-          colors: {
-            dark: [
-              "#F8F9FA",
-              "#F1F3F5",
-              "#E9ECEF",
-              "#DEE2E6",
-              "#CED4DA",
-              "#ADB5BD",
-              "#868E96",
-              "#495057",
-              "#343A40",
-              "#212529",
-            ],
-          },
-        }}
-      >
-        <BlogSection></BlogSection>
-      </MantineProvider>
+      <AboutSection></AboutSection>
+      <TestimonialSection></TestimonialSection>
+      <BlogSection></BlogSection>
 
       <FooterSection></FooterSection>
     </Fragment>

@@ -5,18 +5,12 @@ import {
   Card as MantineCard,
 } from "@mantine/core";
 import { moveInLeft, moveInRight, moveInUp } from "./Section.animation";
+import { theme } from "../../../style/theme/theme";
+import imgWorkingSpace from "../../../assets/working-space.jpg";
 
 export const SectionContainer = styled.div`
   position: relative;
   background: ${(props) => props.color};
-`;
-
-export const BlogContainer = styled.div`
-  padding: 3rem;
-`;
-
-export const ServiceContainer = styled.div`
-  padding: 3rem;
 `;
 
 export const HeroTitle = styled(MantineTitle)`
@@ -75,6 +69,46 @@ export const HeroText = styled(MantineText)`
     font-size: 10px;
     margin-left: 2.5rem;
   }
+`;
+
+export const ServiceContainer = styled.div`
+  padding: 3rem;
+`;
+
+export const ServiceBox = styled.div`
+  padding: 2rem;
+  background-color: ${() => theme.colors.reactBlue};
+`;
+
+export const ServiceTitle = styled.h2``;
+
+export const ServiceContent = styled.p``;
+
+export const AboutContainer = styled.div`
+  padding: 5rem 10rem 5rem 10rem;
+`;
+export const AboutBox = styled.div``;
+export const AboutTitle = styled.h2``;
+export const AboutContent = styled.p``;
+
+export const TestimonialBackground = styled.div`
+  background-image: url(${imgWorkingSpace});
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 0;
+`;
+
+export const TestimonialContainer = styled.div`
+  background-color: ${() => theme.colors.black};
+  width: 1100px;
+  height: 550px;
+`;
+
+export const BlogContainer = styled.div`
+  padding: 3rem;
 `;
 
 export const Card = styled(MantineCard as any)`

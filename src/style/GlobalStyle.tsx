@@ -16,4 +16,16 @@ export const GlobalStyle = createGlobalStyle`
       font-family: "Roboto", sans-serif;
       font-weight: 700;
     }
+
+    h2 {
+      font-family: "Roboto", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 2;
+    }
 `;

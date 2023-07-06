@@ -14,7 +14,7 @@ export const Button = styled.button<Props>`
   margin: 0.5rem 0;
   border-radius: 10px;
   width: 25%;
-  margin: 1rem;
+
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;

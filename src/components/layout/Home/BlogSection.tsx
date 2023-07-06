@@ -1,7 +1,8 @@
 import { Grid, Image, Text, Title, useMantineColorScheme } from "@mantine/core";
 import React, { Fragment } from "react";
 import { BlogContainer, Card, SectionContainer } from "./Section.style";
-import WhiteSectionTag from "../../common/Tag/WhiteSectionTag";
+import SectionTag from "../../common/Tag/SectionTag";
+import { theme } from "../../../style/theme/theme";
 
 const BlogSection: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -10,10 +11,10 @@ const BlogSection: React.FC = () => {
   return (
     <Fragment>
       <SectionContainer color={dark ? "#000" : "#ADB5BD"}>
-        <WhiteSectionTag
+        <SectionTag
           title="BLOG"
-          color={dark ? "#000" : "#ADB5BD"}
-        ></WhiteSectionTag>
+          color={dark ? theme.colors.black : theme.colors.grey}
+        ></SectionTag>
         <BlogContainer>
           {/* <Title align="center">This is a Blog Section</Title> */}
 
