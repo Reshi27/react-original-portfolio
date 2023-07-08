@@ -1,16 +1,16 @@
 import React, { Fragment, useState, ChangeEvent, FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
-  Background,
-  LoginTitle,
+  AuthTitle,
   ReactImage,
   Form,
   FormGroup,
-  LoginContainer,
-  LoginButton,
-} from "./LoginForm.style";
-import { Card } from "../Card/Card";
-import reactLogo from "../../../assets/react.svg";
+  AuthContainer,
+  AuthButton,
+  AuthBackground,
+} from "./AuthForm.style";
+import { Card } from "../common/Card/Card";
+import reactLogo from "../../assets/react.svg";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState<string>();
@@ -50,11 +50,11 @@ export const LoginForm = () => {
 
   return (
     <Fragment>
-      <Background>
+      <AuthBackground>
         <ReactImage src={reactLogo}></ReactImage>
         <Card>
-          <LoginContainer>
-            <LoginTitle>Log In</LoginTitle>
+          <AuthContainer>
+            <AuthTitle>Log In</AuthTitle>
             <Form onSubmit={loginHandler}>
               <FormGroup>
                 <label htmlFor="login">Email</label>
@@ -78,13 +78,16 @@ export const LoginForm = () => {
                 />
               </FormGroup>
 
-              <LoginButton bg={" #0F0F0F"} type="submit">
+              <AuthButton bg={" #0F0F0F"} type="submit">
                 Login
-              </LoginButton>
+              </AuthButton>
+              <Link to={"/register"} style={{ textAlign: "center" }}>
+                Dont have account, register here
+              </Link>
             </Form>
-          </LoginContainer>
+          </AuthContainer>
         </Card>
-      </Background>
+      </AuthBackground>
     </Fragment>
   );
 };

@@ -5,12 +5,14 @@ import LoginPage from "../../pages/LoginPage";
 import HomePage from "../../pages/HomePage";
 import BlogDetailsPage from "../../pages/BlogDetailsPage";
 import TestPage from "../../pages/TestPage";
+import RegisterPage from "../../pages/RegisterPage";
 
 export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage></LoginPage>}></Route>
+        <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
         <Route path="portfolio" element={<HomePage></HomePage>}></Route>
         <Route path="blog" element={<BlogPage></BlogPage>}></Route>
         <Route

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Button } from "../Button/Button.style";
+import { Button } from "../common/Button/Button.style";
 
-export const Background = styled.div`
+export const AuthBackground = styled.div`
   background-color: #0f0f0f;
   width: 100%;
   height: 100%;
@@ -31,12 +31,12 @@ export const ReactImage = styled.img`
   }
 `;
 
-export const LoginContainer = styled.div`
+export const AuthContainer = styled.div`
   color: white;
   width: 425px;
 `;
 
-export const LoginTitle = styled.h1`
+export const AuthTitle = styled.h1`
   display: block;
   text-align: center;
   color: #042f66;
@@ -70,7 +70,7 @@ export const FormGroup = styled.div`
   }
 `;
 
-export const LoginButton = styled(Button)`
+export const AuthButton = styled(Button)`
   text-align: center;
   margin: 0.5rem auto;
   border-radius: 8px;
@@ -87,4 +87,10 @@ export const LoginButton = styled(Button)`
   position: relative;
   text-align: center;
   text-decoration: none;
+  width: 100%;
+`;
+
+export const NameGroup = styled.div`
+  display: flex;
+  align-items: center;
 `;
