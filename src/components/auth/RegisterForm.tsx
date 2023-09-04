@@ -167,11 +167,14 @@ const RegisterForm: React.FC = () => {
 
               <NameGroup>
                 <DateInput
+                  mb={"md"}
+                  mr={"md"}
                   value={registerForm.membershipStart}
                   onChange={setRegisterForm.toString}
                   label="Membership Start"
                 ></DateInput>
                 <DateInput
+                  mb={"md"}
                   value={registerForm.membershipEnd}
                   onChange={setRegisterForm.toString}
                   label="Membership End"

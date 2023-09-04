@@ -10,6 +10,7 @@ export const AuthBackground = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow-y: auto;
 `;
 
 export const ReactImage = styled.img`

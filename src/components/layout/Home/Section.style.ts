@@ -105,20 +105,22 @@ export const TestimonialContainer = styled.div`
   background-color: ${() => theme.colors.black};
   width: 1100px;
   height: 550px;
-  padding: 3rem;
+  padding: 6rem;
 `;
 
-export const QuotesShape = styled.div`
-  width: 40px;
-  height: 80px;
-  border-top: 30px solid ${(props) => props.color};
-  border-right: 40px solid ${() => theme.colors.reactBlue};
-  border-left: 1px solid ${() => theme.colors.reactBlue};
-  border-bottom: 1px solid ${() => theme.colors.reactBlue};
-  padding-top: 1px;
+export const QuotesImage = styled.img``;
+
+export const TestimonialContent = styled.p`
+  color: white;
+  font-size: 24px;
 `;
 
-export const TestimonialContent = styled.h2``;
+export const TestimonialFooterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const BtnLeftArrow = styled.button``;
 export const BtnRightArrow = styled.button``;
 
@@ -128,6 +130,20 @@ export const BlogContainer = styled.div`
 
 export const Card = styled(MantineCard as any)`
   animation: ${moveInUp} 1s ease-in;
+
+  &:hover {
+    transition: 0.5s ease;
+    transform: translateY(-0.3rem);
+  }
+
+  &:not(:hover) {
+    transition: 0.5s ease;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+  }
 `;
 
 export const Signature = styled.img`
