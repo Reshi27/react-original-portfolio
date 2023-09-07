@@ -3,14 +3,16 @@ import React, { Fragment } from "react";
 import { BlogContainer, Card, SectionContainer } from "./Section.style";
 import SectionTag from "../../common/Tag/SectionTag";
 import { theme } from "../../../style/theme/theme";
+import { useResponsive } from "../../../hooks/useResponsive";
 
 const BlogSection: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
+  const matches = useResponsive("lg");
 
   return (
     <Fragment>
-      <SectionContainer color={dark ? "#000" : "#ADB5BD"}>
+      <SectionContainer color={dark ? theme.colors.black : theme.colors.grey}>
         <SectionTag
           title="BLOG"
           color={dark ? theme.colors.black : theme.colors.grey}
@@ -19,7 +21,7 @@ const BlogSection: React.FC = () => {
           {/* <Title align="center">This is a Blog Section</Title> */}
 
           <Grid mt={10} gutter="xl" justify="center" align="center">
-            <Grid.Col md={6} lg={4} mt={10}>
+            <Grid.Col md={6} lg={8} mt={10}>
               <Card
                 shadow="md"
                 p="xl"
@@ -30,7 +32,7 @@ const BlogSection: React.FC = () => {
                 <Card.Section>
                   <Image
                     src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                    height={160}
+                    height={matches ? 400 : 160}
                     alt="No way!"
                   />
                 </Card.Section>
@@ -45,6 +47,9 @@ const BlogSection: React.FC = () => {
                 </Text>
               </Card>
             </Grid.Col>
+          </Grid>
+
+          <Grid mt={10} gutter="xl" justify="center" align="center">
             <Grid.Col md={6} lg={4} mt={10}>
               <Card
                 shadow="md"
@@ -56,7 +61,7 @@ const BlogSection: React.FC = () => {
                 <Card.Section>
                   <Image
                     src="https://images.unsplash.com/photo-1510852151262-05bfbfbe996d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
-                    height={160}
+                    height={matches ? 220 : 160}
                     alt="No way!"
                   />
                 </Card.Section>
@@ -82,7 +87,7 @@ const BlogSection: React.FC = () => {
                 <Card.Section>
                   <Image
                     src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                    height={160}
+                    height={matches ? 220 : 160}
                     alt="No way!"
                   />
                 </Card.Section>
