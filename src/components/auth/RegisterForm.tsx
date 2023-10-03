@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { FormEvent, Fragment, useState } from "react";
 import {
   AuthBackground,
   AuthButton,
@@ -8,9 +8,10 @@ import {
   NameGroup,
 } from "./AuthForm.style";
 import { Card } from "../common/Card/Card";
-import { InputBase, NativeSelect, Select } from "@mantine/core";
+import { InputBase, Modal, NativeSelect, Select } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import axios from "axios";
+import { useDisclosure } from "@mantine/hooks";
 
 const RegisterForm: React.FC = () => {
   const selectData = [
@@ -23,6 +24,7 @@ const RegisterForm: React.FC = () => {
       label: "Where did you confess to your crush?",
     },
   ];
+  const [opened, { open, close }] = useDisclosure(false);
 
   const [registerForm, setRegisterForm] = useState({
     firstName: "",
@@ -42,15 +44,17 @@ const RegisterForm: React.FC = () => {
     setRegisterForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleDateFormChange = (date: Date, name: any) => {
+  const handleDateFormChange = (date: Date | null, name: any) => {
     if (!date) {
       setRegisterForm((prev) => ({ ...prev, [name]: null }));
+      return;
     }
 
-    setRegisterForm((prev) => ({ ...prev, [name]: new Date() }));
+    setRegisterForm((prev) => ({ ...prev, [name]: date }));
   };
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const newFormData = {
       firstName: registerForm.firstName,
       lastName: registerForm.lastName,
@@ -61,27 +65,30 @@ const RegisterForm: React.FC = () => {
       confirmPassword: registerForm.confirmPassword,
       restoreQuestion: registerForm.restoreQuestion,
       restoreAnswer: registerForm.restoreAnswer,
-      membershipStart: new Date(),
-      membershipEnd: new Date(),
-      transfetEvidence: "this",
+      membershipStart: registerForm.membershipStart,
+      membershipEnd: registerForm.membershipEnd,
+      transfetEvidence: "Hai hai",
     };
 
-    const { data } = await axios.post(
-      "http://localhost:8080/api/user/create",
-      newFormData
-    );
+    axios
+      .post("http://localhost:8080/api/user/create", newFormData)
+      .then((response) => {
+        <Modal opened={opened} onClose={close}>
+          Successfully Register
+        </Modal>;
+      });
 
-    return data;
+    console.log(newFormData);
   };
 
-  console.log(registerForm);
   return (
     <Fragment>
       <AuthBackground>
         <AuthContainer>
           <Card>
             <AuthTitle>Register</AuthTitle>
-            <Form>
+
+            <Form onSubmit={handleFormSubmit}>
               <NameGroup>
                 <InputBase
                   mb={"md"}
@@ -93,6 +100,7 @@ const RegisterForm: React.FC = () => {
                     handleFormChange(target.value, "firstName")
                   }
                   value={registerForm.firstName}
+                  required
                 ></InputBase>
                 <InputBase
                   mb={"md"}
@@ -103,6 +111,7 @@ const RegisterForm: React.FC = () => {
                     handleFormChange(target.value, "lastName")
                   }
                   value={registerForm.lastName}
+                  required
                 ></InputBase>
               </NameGroup>
               <InputBase
@@ -112,8 +121,15 @@ const RegisterForm: React.FC = () => {
                 type="number"
                 onChange={({ target }) => handleFormChange(target.value, "age")}
                 value={registerForm.age}
+                required
               ></InputBase>
-              <DateInput mb={"md"} label="Date of Birth"></DateInput>
+              <DateInput
+                mb={"md"}
+                valueFormat="DD MMM YYYY"
+                value={registerForm.dateOfBirth}
+                onChange={(date) => handleDateFormChange(date, "dateOfBirth")}
+                label="Date of Birth"
+              ></DateInput>
               <InputBase
                 label="Email"
                 name="email"
@@ -123,6 +139,7 @@ const RegisterForm: React.FC = () => {
                   handleFormChange(target.value, "email")
                 }
                 value={registerForm.email}
+                required
               ></InputBase>
               <InputBase
                 mb={"md"}
@@ -133,6 +150,7 @@ const RegisterForm: React.FC = () => {
                   handleFormChange(target.value, "password")
                 }
                 value={registerForm.password}
+                required
               ></InputBase>
               <InputBase
                 mb={"md"}
@@ -143,6 +161,7 @@ const RegisterForm: React.FC = () => {
                   handleFormChange(target.value, "confirmPassword")
                 }
                 value={registerForm.confirmPassword}
+                required
               ></InputBase>
               <NativeSelect
                 data={selectData}
@@ -150,9 +169,11 @@ const RegisterForm: React.FC = () => {
                 label="Restore Password Question"
                 name="restoreQuestion"
                 mb={"md"}
+                value={registerForm.restoreQuestion}
                 onChange={({ target }) =>
                   handleFormChange(target.value, "restoreQuestion")
                 }
+                required
               ></NativeSelect>
               <InputBase
                 mb={"md"}
@@ -163,25 +184,34 @@ const RegisterForm: React.FC = () => {
                   handleFormChange(target.value, "restoreAnswer")
                 }
                 value={registerForm.restoreAnswer}
+                required
               ></InputBase>
 
               <NameGroup>
                 <DateInput
+                  valueFormat="DD MMM YYYY"
                   mb={"md"}
                   mr={"md"}
                   value={registerForm.membershipStart}
-                  onChange={setRegisterForm.toString}
+                  onChange={(date) =>
+                    handleDateFormChange(date, "membershipStart")
+                  }
                   label="Membership Start"
                 ></DateInput>
                 <DateInput
+                  valueFormat="DD MMM YYYY"
                   mb={"md"}
                   value={registerForm.membershipEnd}
-                  onChange={setRegisterForm.toString}
+                  onChange={(date) => {
+                    handleDateFormChange(date, "membershipEnd");
+                  }}
                   label="Membership End"
                 ></DateInput>
               </NameGroup>
 
-              <AuthButton bg="#0F0F0F">Register</AuthButton>
+              <AuthButton bg="#0F0F0F" type="submit" onClick={open}>
+                Register
+              </AuthButton>
             </Form>
           </Card>
         </AuthContainer>

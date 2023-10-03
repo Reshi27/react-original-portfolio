@@ -34,7 +34,8 @@ export const ReactImage = styled.img`
 
 export const AuthContainer = styled.div`
   color: white;
-  width: 425px;
+  height: 100%;
+  padding-top: 2rem;
 `;
 
 export const AuthTitle = styled.h1`
