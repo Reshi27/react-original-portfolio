@@ -14,13 +14,13 @@ export interface User {
   firstName: string;
   lastName: string;
   age: number;
-  dateOfBirth: Date;
+  dateOfBirth: Date | null;
   email: string;
   password: string;
   confirmPassword: string;
   passwordQuestion: string;
   passwordAnswer: string;
-  membershipStart: Date;
-  membershipEnd: Date;
+  membershipStart: Date | null;
+  membershipEnd: Date | null;
   transferEvidence: string;
 }

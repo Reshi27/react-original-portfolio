@@ -8,10 +8,11 @@ import {
   NameGroup,
 } from "./AuthForm.style";
 import { Card } from "../common/Card/Card";
-import { InputBase, Modal, NativeSelect, Select } from "@mantine/core";
+import { InputBase, Modal, NativeSelect } from "@mantine/core";
 import { DateInput } from "@mantine/dates";
 import axios from "axios";
 import { useDisclosure } from "@mantine/hooks";
+import { User } from "../../interfaces/Interface";
 
 const RegisterForm: React.FC = () => {
   const selectData = [
@@ -26,7 +27,7 @@ const RegisterForm: React.FC = () => {
   ];
   const [opened, { open, close }] = useDisclosure(false);
 
-  const [registerForm, setRegisterForm] = useState({
+  const [registerForm, setRegisterForm] = useState<User>({
     firstName: "",
     lastName: "",
     age: 0,
@@ -34,10 +35,11 @@ const RegisterForm: React.FC = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    restoreQuestion: "",
-    restoreAnswer: "",
+    passwordQuestion: "",
+    passwordAnswer: "",
     membershipStart: null,
     membershipEnd: null,
+    transferEvidence: "",
   });
 
   const handleFormChange = (value: any, name: any) => {
@@ -54,31 +56,31 @@ const RegisterForm: React.FC = () => {
   };
 
   const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const newFormData = {
-      firstName: registerForm.firstName,
-      lastName: registerForm.lastName,
-      age: registerForm.age,
-      dateOfBirth: new Date(),
-      email: registerForm.email,
-      password: registerForm.password,
-      confirmPassword: registerForm.confirmPassword,
-      restoreQuestion: registerForm.restoreQuestion,
-      restoreAnswer: registerForm.restoreAnswer,
-      membershipStart: registerForm.membershipStart,
-      membershipEnd: registerForm.membershipEnd,
-      transfetEvidence: "Hai hai",
-    };
+    try {
+      event.preventDefault();
+      const newFormData = {
+        firstName: registerForm.firstName,
+        lastName: registerForm.lastName,
+        age: registerForm.age,
+        dateOfBirth: registerForm.dateOfBirth,
+        email: registerForm.email,
+        password: registerForm.password,
+        confirmPassword: registerForm.confirmPassword,
+        passwordQuestion: registerForm.passwordQuestion,
+        passwordAnswer: registerForm.passwordAnswer,
+        membershipStart: registerForm.membershipStart,
+        membershipEnd: registerForm.membershipEnd,
+        transferEvidence: "Hai hai",
+      };
 
-    axios
-      .post("http://localhost:8080/api/user/create", newFormData)
-      .then((response) => {
+      axios.post("http://localhost:8080/api/user/create", newFormData);
+    } catch (error) {
+      return (
         <Modal opened={opened} onClose={close}>
-          Successfully Register
-        </Modal>;
-      });
-
-    console.log(newFormData);
+          There has an error occured
+        </Modal>
+      );
+    }
   };
 
   return (
@@ -169,9 +171,9 @@ const RegisterForm: React.FC = () => {
                 label="Restore Password Question"
                 name="restoreQuestion"
                 mb={"md"}
-                value={registerForm.restoreQuestion}
+                value={registerForm.passwordQuestion}
                 onChange={({ target }) =>
-                  handleFormChange(target.value, "restoreQuestion")
+                  handleFormChange(target.value, "passwordQuestion")
                 }
                 required
               ></NativeSelect>
@@ -181,9 +183,9 @@ const RegisterForm: React.FC = () => {
                 name="restoreAnswer"
                 type="text"
                 onChange={({ target }) =>
-                  handleFormChange(target.value, "restoreAnswer")
+                  handleFormChange(target.value, "passwordAnswer")
                 }
-                value={registerForm.restoreAnswer}
+                value={registerForm.passwordAnswer}
                 required
               ></InputBase>
 
@@ -216,6 +218,10 @@ const RegisterForm: React.FC = () => {
           </Card>
         </AuthContainer>
       </AuthBackground>
+      <Modal opened={opened} onClose={close}>
+        Successfully Register
+      </Modal>
+      ;
     </Fragment>
   );
 };

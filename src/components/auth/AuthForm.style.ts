@@ -17,8 +17,7 @@ export const ReactImage = styled.img`
   width: 10rem;
   height: 10rem;
   margin-bottom: 2rem;
-  position: fixed;
-  top: 0.1rem;
+  /* position: fixed; */
 
   animation: logo-spin infinite 20s linear;
 
@@ -35,7 +34,6 @@ export const ReactImage = styled.img`
 export const AuthContainer = styled.div`
   color: white;
   height: 100%;
-  padding-top: 2rem;
 `;
 
 export const AuthTitle = styled.h1`
@@ -50,14 +48,12 @@ export const AuthTitle = styled.h1`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  margin-top: -1rem;
 `;
 
 export const FormGroup = styled.div`
   margin: 1rem;
   display: block;
-  & label {
-    margin-bottom: 1rem;
-  }
 
   & input {
     border-radius: 5px;
@@ -74,7 +70,7 @@ export const FormGroup = styled.div`
 
 export const AuthButton = styled(Button)`
   text-align: center;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -89,7 +85,7 @@ export const AuthButton = styled(Button)`
   position: relative;
   text-align: center;
   text-decoration: none;
-  width: 100%;
+  width: 91%;
 `;
 
 export const NameGroup = styled.div`
