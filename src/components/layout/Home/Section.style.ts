@@ -78,6 +78,7 @@ export const ServiceContainer = styled.div`
 export const ServiceBox = styled.div`
   padding: 2rem;
   background-color: ${() => theme.colors.reactBlue};
+  min-height: 23rem;
 `;
 
 export const ServiceTitle = styled.h2``;
@@ -115,14 +116,20 @@ export const TestimonialContent = styled.p`
   font-size: 24px;
 `;
 
+export const AvatarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > :first-child {
+    margin-right: 1rem;
+  }
+`;
+
 export const TestimonialFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-
-export const BtnLeftArrow = styled.button``;
-export const BtnRightArrow = styled.button``;
 
 export const BlogContainer = styled.div`
   padding: 3rem;

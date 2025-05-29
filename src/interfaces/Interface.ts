@@ -24,3 +24,11 @@ export interface User {
   membershipEnd: Date | null;
   transferEvidence: string;
 }
+
+export interface ITestimonyData {
+  testimonyId: number;
+  testimonyContent: string;
+  testimonyImage: string;
+  testimonyName: string;
+  testimonyPosition: string;
+}
