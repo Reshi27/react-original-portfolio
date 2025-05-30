@@ -3,6 +3,7 @@ import {
   Title as MantineTitle,
   Text as MantineText,
   Card as MantineCard,
+  CardProps,
 } from "@mantine/core";
 import { moveInLeft, moveInRight, moveInUp } from "./Section.animation";
 import { theme } from "../../../style/theme/theme";
@@ -135,7 +136,7 @@ export const BlogContainer = styled.div`
   padding: 3rem;
 `;
 
-export const Card = styled(MantineCard as any)`
+export const Card = styled(MantineCard)<CardProps>`
   animation: ${moveInUp} 1s ease-in;
 
   &:hover {

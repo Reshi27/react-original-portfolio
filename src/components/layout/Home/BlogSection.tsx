@@ -22,10 +22,9 @@ const BlogSection: React.FC = () => {
 
           <Grid mt={10} gutter="xl" justify="center" align="center">
             <Grid.Col md={6} lg={8} mt={10}>
-              <Card
+              <Card<"a">
                 shadow="md"
                 p="xl"
-                component="a"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 target="_blank"
               >
@@ -51,10 +50,9 @@ const BlogSection: React.FC = () => {
 
           <Grid mt={10} gutter="xl" justify="center" align="center">
             <Grid.Col md={6} lg={4} mt={10}>
-              <Card
+              <Card<"a">
                 shadow="md"
                 p="xl"
-                component="a"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 target="_blank"
               >
@@ -77,10 +75,9 @@ const BlogSection: React.FC = () => {
               </Card>
             </Grid.Col>
             <Grid.Col md={6} lg={4} mt={10}>
-              <Card
+              <Card<"a">
                 shadow="md"
                 p="xl"
-                component="a"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 target="_blank"
               >

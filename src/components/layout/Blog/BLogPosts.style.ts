@@ -11,7 +11,7 @@ to{
 }
 `;
 
-export const Card = styled(MantineCard as any)`
+export const Card = styled(MantineCard)`
   background-color: ${(props) => props.theme};
   cursor: pointer;
   min-height: 23rem;

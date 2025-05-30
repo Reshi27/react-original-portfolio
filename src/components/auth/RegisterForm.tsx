@@ -167,7 +167,7 @@ const RegisterForm: React.FC = () => {
               ></InputBase>
               <NativeSelect
                 data={selectData}
-                placeholder="Pick One"
+                description="Pick One"
                 label="Restore Password Question"
                 name="restoreQuestion"
                 mb={"md"}

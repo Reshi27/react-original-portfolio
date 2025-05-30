@@ -5,7 +5,6 @@ import {
   AuthContainer,
   AuthTitle,
   Form,
-  NameGroup,
 } from "./AuthForm.style";
 import { Card, InputBase, NativeSelect } from "@mantine/core";
 
@@ -86,7 +85,7 @@ const EmployeeRegistForm: React.FC = () => {
               ></InputBase>
               <NativeSelect
                 data={selectData}
-                placeholder="Pick One"
+                description="Pick One"
                 label="Restore Password Question"
                 name="restoreQuestion"
                 mb={"md"}
