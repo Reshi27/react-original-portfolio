@@ -8,10 +8,19 @@ import {
 import { moveInLeft, moveInRight, moveInUp } from "./Section.animation";
 import { theme } from "../../../style/theme/theme";
 import imgWorkingSpace from "../../../assets/working-space.jpg";
+import { IStyledComponentProps } from "../../../interfaces/Interface";
 
 export const SectionContainer = styled.div`
   position: relative;
   background: ${(props) => props.color};
+`;
+
+export const HeroContainer = styled.div`
+  display: flex;
+  background: ${(props) => props.color};
+  flex-direction: column;
+  padding-top: 100px;
+  padding-left: 25rem;
 `;
 
 export const HeroTitle = styled(MantineTitle)`
@@ -46,12 +55,12 @@ export const HeroSpanTitle = styled(MantineTitle)`
   }
 `;
 
-export const HeroText = styled(MantineText)`
+export const HeroText = styled.p<IStyledComponentProps>`
   font-size: 36px;
   letter-spacing: 10px;
   font-family: "Raleway", sans-serif;
   margin-top: 20px;
-  color: cyan;
+  color: ${(props) => props.$textColor};
   margin-bottom: 2rem;
   margin-left: 0.8rem;
   animation: ${moveInRight} 1s ease;
@@ -76,10 +85,11 @@ export const ServiceContainer = styled.div`
   padding: 3rem;
 `;
 
-export const ServiceBox = styled.div`
+export const ServiceBox = styled.div<IStyledComponentProps>`
   padding: 2rem;
-  background-color: ${() => theme.colors.reactBlue};
+  background-color: ${(props) => props.$backgroundColor};
   min-height: 23rem;
+  color: ${(props) => props.$textColor};
 `;
 
 export const ServiceTitle = styled.h2``;
@@ -172,6 +182,7 @@ export const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-right: 2rem;
+  background-color: ${(props) => props.color};
 `;
 
 export const FooterIcons = styled.a`
@@ -182,7 +193,7 @@ export const FooterIcons = styled.a`
   &:hover {
     transition: 0.5s ease;
     transform: translateY(-0.3rem);
-    color: cyan;
+    color: ${(props) => props.color};
   }
 
   &:not(:hover) {

@@ -24,7 +24,6 @@ const PortfolioPage: React.FC = () => {
       <AboutSection></AboutSection>
       <TestimonialSection></TestimonialSection>
       <BlogSection></BlogSection>
-
       <FooterSection></FooterSection>
     </Fragment>
   );

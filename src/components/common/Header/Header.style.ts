@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../../style/theme/theme";
 
 export const HeaderContainer = styled.div`
   padding: 1rem 2rem;
@@ -8,7 +9,9 @@ export const HeaderContainer = styled.div`
   background-color: ${(props) => props.color};
 `;
 
-export const BrandLogo = styled.div``;
+export const BrandLogo = styled.div`
+  color: ${(props) => props.color};
+`;
 
 export const Navigation = styled.nav`
   display: flex;
@@ -45,7 +48,7 @@ export const Navigation = styled.nav`
     top: 2.8rem;
     transform: scaleX(0);
     height: 2px;
-    background-color: #fff;
+    background-color: #ffffff;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -63,7 +66,7 @@ export const Navigation = styled.nav`
 export const HeaderIcons = styled.div`
   margin: 0;
   padding: 0;
-  color: cyan;
+  color: ${() => theme.colors.reactBlue};
   font-size: 18px;
   display: none;
   cursor: pointer;

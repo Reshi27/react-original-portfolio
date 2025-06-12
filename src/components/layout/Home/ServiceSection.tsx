@@ -16,16 +16,26 @@ const ServiceSection: React.FC = () => {
 
   return (
     <Fragment>
-      <SectionContainer color={dark ? theme.colors.black : theme.colors.grey}>
+      <SectionContainer
+        color={dark ? theme.colors.bgDarkPrimary : theme.colors.bgLightPrimary}
+      >
         <SectionTag
           title="SERVICES"
-          color={dark ? theme.colors.black : theme.colors.grey}
+          bgColor={dark ? theme.colors.white : theme.colors.bgDarkPrimary}
+          borderColor={
+            dark ? theme.colors.bgDarkPrimary : theme.colors.bgLightPrimary
+          }
         ></SectionTag>
 
         <ServiceContainer>
           <Grid justify="flex-end" align="center">
             <Grid.Col md={6} lg={3} mt={10}>
-              <ServiceBox>
+              <ServiceBox
+                $backgroundColor={
+                  dark ? theme.colors.white : theme.colors.bgDarkPrimary
+                }
+                $textColor={dark ? theme.colors.black : theme.colors.white}
+              >
                 <ServiceTitle>DESIGN</ServiceTitle>
                 <ServiceContent>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -37,7 +47,12 @@ const ServiceSection: React.FC = () => {
             </Grid.Col>
 
             <Grid.Col md={6} lg={3} mt={10}>
-              <ServiceBox>
+              <ServiceBox
+                $backgroundColor={
+                  dark ? theme.colors.white : theme.colors.bgDarkPrimary
+                }
+                $textColor={dark ? theme.colors.black : theme.colors.white}
+              >
                 <ServiceTitle>CODE</ServiceTitle>
                 <ServiceContent>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -49,7 +64,12 @@ const ServiceSection: React.FC = () => {
             </Grid.Col>
 
             <Grid.Col md={6} lg={3} mt={10}>
-              <ServiceBox>
+              <ServiceBox
+                $backgroundColor={
+                  dark ? theme.colors.white : theme.colors.bgDarkPrimary
+                }
+                $textColor={dark ? theme.colors.black : theme.colors.white}
+              >
                 <ServiceTitle>UPLOAD</ServiceTitle>
                 <ServiceContent>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem

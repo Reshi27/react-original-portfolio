@@ -32,3 +32,9 @@ export interface ITestimonyData {
   testimonyName: string;
   testimonyPosition: string;
 }
+
+export interface IStyledComponentProps {
+  $backgroundColor?: string;
+  $borderColor?: string;
+  $textColor?: string;
+}

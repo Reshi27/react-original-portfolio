@@ -1,15 +1,33 @@
-import { Container, Text, Title } from "@mantine/core";
+import { Container, useMantineColorScheme } from "@mantine/core";
 import React, { Fragment } from "react";
-import { HeroSpanTitle, HeroText, HeroTitle } from "./Section.style";
+import {
+  HeroContainer,
+  HeroSpanTitle,
+  HeroText,
+  HeroTitle,
+} from "./Section.style";
+import { theme } from "../../../style/theme/theme";
 
 const HeroSection: React.FC = () => {
+  const { colorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
   return (
     <Fragment>
-      <Container mt={100}>
+      <HeroContainer
+        color={
+          dark ? theme.colors.bgDarkSecondary : theme.colors.bgLightSecondary
+        }
+      >
         <HeroTitle>Mahareshi</HeroTitle>
         <HeroSpanTitle>Wahyuaji</HeroSpanTitle>
-        <HeroText>FRONT-END DEVELOPER</HeroText>
-      </Container>
+        <HeroText
+          $textColor={
+            dark ? theme.colors.fontDarkBlue : theme.colors.fontDarkBlue
+          }
+        >
+          FRONT-END DEVELOPER
+        </HeroText>
+      </HeroContainer>
     </Fragment>
   );
 };

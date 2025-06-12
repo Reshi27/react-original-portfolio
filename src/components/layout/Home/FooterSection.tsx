@@ -10,6 +10,7 @@ import {
 import { BsDiscord, BsGithub, BsInstagram } from "react-icons/bs";
 
 import { useMantineColorScheme } from "@mantine/core";
+import { theme } from "../../../style/theme/theme";
 
 const FooterSection: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
@@ -17,16 +18,26 @@ const FooterSection: React.FC = () => {
 
   return (
     <Fragment>
-      <FooterContainer>
+      <FooterContainer
+        color={
+          dark ? theme.colors.bgDarkSecondary : theme.colors.bgLightSecondary
+        }
+      >
         <Signature src={dark ? lightSignature : darkSignature}></Signature>
         <IconWrapper>
-          <FooterIcons>
+          <FooterIcons
+            color={dark ? theme.colors.reactBlue : theme.colors.white}
+          >
             <BsGithub></BsGithub>
           </FooterIcons>
-          <FooterIcons>
+          <FooterIcons
+            color={dark ? theme.colors.reactBlue : theme.colors.white}
+          >
             <BsInstagram></BsInstagram>
           </FooterIcons>
-          <FooterIcons>
+          <FooterIcons
+            color={dark ? theme.colors.reactBlue : theme.colors.white}
+          >
             <BsDiscord></BsDiscord>
           </FooterIcons>
         </IconWrapper>

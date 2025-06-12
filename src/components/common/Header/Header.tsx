@@ -17,6 +17,7 @@ import {
 import { Link } from "react-router-dom";
 
 import { GiHamburger } from "react-icons/gi";
+import { theme } from "../../../style/theme/theme";
 const Header: React.FC = () => {
   const { colorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
@@ -55,8 +56,12 @@ const Header: React.FC = () => {
         </MobileNavigation>
       </Drawer>
 
-      <HeaderContainer color={dark ? "#000" : "#ADB5BD"}>
-        <BrandLogo>Reshi27</BrandLogo>
+      <HeaderContainer
+        color={dark ? theme.colors.bgDarkPrimary : theme.colors.bgLightPrimary}
+      >
+        <BrandLogo color={dark ? theme.colors.reactBlue : theme.colors.black}>
+          Reshi27
+        </BrandLogo>
         <Navigation>
           <Link
             to="/portfolio"

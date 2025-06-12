@@ -136,11 +136,13 @@ const TestimonialSection: React.FC = () => {
               size={35}
               cursor={"pointer"}
               onClick={() => prevButton(-1)}
+              color="white"
             ></FaArrowLeft>
             <FaArrowRight
               size={35}
               cursor={"pointer"}
               onClick={() => nextButton(1)}
+              color="white"
             ></FaArrowRight>
           </Button.Group>
         </TestimonialContainer>

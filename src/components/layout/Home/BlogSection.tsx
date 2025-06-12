@@ -12,10 +12,15 @@ const BlogSection: React.FC = () => {
 
   return (
     <Fragment>
-      <SectionContainer color={dark ? theme.colors.black : theme.colors.grey}>
+      <SectionContainer
+        color={dark ? theme.colors.bgDarkPrimary : theme.colors.bgLightPrimary}
+      >
         <SectionTag
           title="BLOG"
-          color={dark ? theme.colors.black : theme.colors.grey}
+          bgColor={dark ? theme.colors.white : theme.colors.bgDarkPrimary}
+          borderColor={
+            dark ? theme.colors.bgDarkPrimary : theme.colors.bgLightPrimary
+          }
         ></SectionTag>
         <BlogContainer>
           {/* <Title align="center">This is a Blog Section</Title> */}
@@ -27,6 +32,11 @@ const BlogSection: React.FC = () => {
                 p="xl"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 target="_blank"
+                bg={
+                  dark
+                    ? theme.colors.bgDarkSecondary
+                    : theme.colors.bgLightSecondary
+                }
               >
                 <Card.Section>
                   <Image
@@ -55,6 +65,11 @@ const BlogSection: React.FC = () => {
                 p="xl"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 target="_blank"
+                bg={
+                  dark
+                    ? theme.colors.bgDarkSecondary
+                    : theme.colors.bgLightSecondary
+                }
               >
                 <Card.Section>
                   <Image
@@ -80,6 +95,11 @@ const BlogSection: React.FC = () => {
                 p="xl"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 target="_blank"
+                bg={
+                  dark
+                    ? theme.colors.bgDarkSecondary
+                    : theme.colors.bgLightSecondary
+                }
               >
                 <Card.Section>
                   <Image

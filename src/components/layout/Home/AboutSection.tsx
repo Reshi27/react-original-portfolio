@@ -18,10 +18,17 @@ const AboutSection: React.FC = () => {
 
   return (
     <Fragment>
-      <SectionContainer>
+      <SectionContainer
+        color={
+          dark ? theme.colors.bgDarkSecondary : theme.colors.bgLightSecondary
+        }
+      >
         <SectionTag
           title="ABOUT"
-          color={dark ? theme.colors.lightBlack : theme.colors.white}
+          bgColor={dark ? theme.colors.white : theme.colors.bgDarkPrimary}
+          borderColor={
+            dark ? theme.colors.bgDarkSecondary : theme.colors.bgLightSecondary
+          }
         ></SectionTag>
 
         <AboutContainer>
