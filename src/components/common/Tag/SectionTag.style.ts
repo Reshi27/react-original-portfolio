@@ -6,7 +6,7 @@ export const TagContainer = styled.div<IStyledComponentProps>`
   width: 437px;
   height: 171px;
   border-right: 110px solid ${(props) => props.$borderColor};
-  border-top: 171px solid transparent;
+  border-bottom: 171px solid transparent;
   padding-top: 1px;
 `;
 
