@@ -32,34 +32,27 @@ const AboutSection: React.FC = () => {
         ></SectionTag>
 
         <AboutContainer>
-          <Grid justify="space-between" align="start">
-            <Grid.Col lg={6}>
-              <AboutBox>
-                <AboutTitle>WHO THE HELL I AM</AboutTitle>
-                <AboutContent>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
-                  vitae quo enim nemo voluptas mollitia reprehenderit eveniet
-                  exercitationem? Distinctio, corrupti? Veniam sed iusto,
-                  veritatis a temporibus ex consequatur dolorem animi. Cum
-                  facere debitis quae enim saepe nobis fugiat quibusdam tempore,
-                  magni incidunt, in quos aperiam, doloribus totam qui maiores
-                  beatae distinctio ratione non commodi exercitationem officiis!
-                  Dicta explicabo blanditiis exercitationem? Dolorum mollitia
-                  maxime rerum exercitationem inventore? Laudantium culpa ut
-                  deleniti qui sequi, inventore eum nesciunt soluta nisi
-                  temporibus repudiandae cupiditate iste quod quisquam, dolore
-                  ad iure, maiores suscipit dolores laborum?
-                </AboutContent>
-                <Button bg={theme.colors.reactBlue}>LEARN MORE</Button>
-              </AboutBox>
-            </Grid.Col>
+          <AboutBox>
+            <AboutTitle>WHO THE HELL I AM</AboutTitle>
+            <AboutContent>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+              vitae quo enim nemo voluptas mollitia reprehenderit eveniet
+              exercitationem? Distinctio, corrupti? Veniam sed iusto, veritatis
+              a temporibus ex consequatur dolorem animi. Cum facere debitis quae
+              enim saepe nobis fugiat quibusdam tempore, magni incidunt, in quos
+              aperiam, doloribus totam qui maiores beatae distinctio ratione non
+              commodi exercitationem officiis! Dicta explicabo blanditiis
+              exercitationem? Dolorum mollitia maxime rerum exercitationem
+              inventore? Laudantium culpa ut deleniti qui sequi, inventore eum
+              nesciunt soluta nisi temporibus repudiandae cupiditate iste quod
+              quisquam, dolore ad iure, maiores suscipit dolores laborum?
+            </AboutContent>
+            <Button bg={theme.colors.reactBlue}>LEARN MORE</Button>
+          </AboutBox>
 
-            <Grid.Col lg={6}>
-              <AboutBox>
-                <Image src={imgIdea} width={350} height={500} mx="auto"></Image>
-              </AboutBox>
-            </Grid.Col>
-          </Grid>
+          <AboutBox>
+            <Image src={imgIdea} width={350} height={500}></Image>
+          </AboutBox>
         </AboutContainer>
       </SectionContainer>
     </Fragment>

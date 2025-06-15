@@ -21,6 +21,16 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   padding-top: 100px;
   padding-left: 25rem;
+
+  @media (max-width: 1200px) {
+    font-size: 80px;
+    padding-left: 15rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 60px;
+    padding-left: 2rem;
+  }
 `;
 
 export const HeroTitle = styled(MantineTitle)`
@@ -98,6 +108,18 @@ export const ServiceContent = styled.p``;
 
 export const AboutContainer = styled.div`
   padding: 5rem 10rem 5rem 10rem;
+  display: flex;
+  justify-content: space-between;
+
+  gap: 5rem;
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 768px) {
+    padding: 10rem 5rem;
+    flex-direction: column;
+  }
 `;
 export const AboutBox = styled.div``;
 export const AboutTitle = styled.h2``;

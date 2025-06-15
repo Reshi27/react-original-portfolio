@@ -14,6 +14,7 @@ export const Button = styled.button<Props>`
   margin: 0.5rem 0;
   border-radius: 10px;
   width: 25%;
+  border: none;
 
   text-align: center;
   cursor: pointer;
@@ -30,5 +31,17 @@ export const Button = styled.button<Props>`
 
   &:active {
     transform: translate(0);
+  }
+
+  @media (max-width: 1200px) {
+    width: 50%;
+  }
+
+  @media (max-width: 992px) {
+    width: 75%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
