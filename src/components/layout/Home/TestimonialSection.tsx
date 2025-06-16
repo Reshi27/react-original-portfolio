@@ -130,7 +130,12 @@ const TestimonialSection: React.FC = () => {
           </AnimatePresence>
 
           <Button.Group
-            style={{ gap: 10, display: "flex", justifyContent: "end" }}
+            style={{
+              gap: 10,
+              display: "flex",
+              justifyContent: "end",
+              marginTop: "2.5rem",
+            }}
           >
             <FaArrowLeft
               size={35}

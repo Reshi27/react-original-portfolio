@@ -137,9 +137,8 @@ export const TestimonialBackground = styled.div`
 
 export const TestimonialContainer = styled.div`
   background-color: ${() => theme.colors.black};
-  width: 1100px;
-  height: 550px;
-  padding: 6rem;
+  width: 75%;
+  padding: 8rem;
 `;
 
 export const QuotesImage = styled.img``;
